@@ -1,0 +1,11 @@
+.DS_Store
+build/
+Generated/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.swiftpm/
+
+# Supabase CLI local state
+supabase/.branches/
+supabase/.temp/
