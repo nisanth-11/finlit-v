@@ -1,6 +1,6 @@
 import Foundation
 
-struct Lesson: Identifiable, Codable, Equatable {
+struct Lesson: Identifiable, Codable, Equatable, Hashable {
     let id: UUID
     var title: String
     var description: String?

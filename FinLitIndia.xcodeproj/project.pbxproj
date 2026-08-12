@@ -15,10 +15,12 @@
 		1E6D1DDFE032804E261295B8 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE413312A5FE375CA49623A /* AppSession.swift */; };
 		204223847FC7484660F0A48E /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73695ADDF07C2955CFCC8A /* LessonDetailView.swift */; };
 		306C9576D690D1DFDA9665CC /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5E0CE4980E877D4549A6E /* BudgetView.swift */; };
+		402F7739637750ED3D3C39FB /* ChatLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9820DA79C41524609A4F01C /* ChatLine.swift */; };
 		5B952E8B6BC8E3FD548FCB92 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98102D104EB645005AE516D8 /* SupabaseConfig.swift */; };
 		6123F68080D61102375C094B /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4B3839D64470546BC53DE4F9 /* Supabase */; };
 		647D7486D992148AE6544A1F /* TranslationTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918126889B164B04E2EE2C2 /* TranslationTable.swift */; };
 		6C5F1756329AA9C8C245A5CE /* RegistrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380E85DB6D8EDFCBC5EA9BE /* RegistrationUITests.swift */; };
+		6CBB0656102FDD3977BB3732 /* LessonChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0D807205C4D56604A9F34 /* LessonChatView.swift */; };
 		7206CDE33939F173F28A4AAB /* RoadmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BA7DFD1769BC0AB19582B2 /* RoadmapView.swift */; };
 		762EE866751D68B4916BEB37 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BC06D609C398F03A0E8CA9 /* MainTabView.swift */; };
 		9238C59D2795203E5AF7B1F4 /* FinLitIndiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFE89490A1942A04B8C2F6 /* FinLitIndiaApp.swift */; };
@@ -27,6 +29,7 @@
 		C8216C334544181EE710B888 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E673BC3D35831CFE748CD3 /* ProfileView.swift */; };
 		D308B035FE57E707F03EC427 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700ACE704D35091325D333DD /* RegistrationView.swift */; };
 		D8D3F6C9308A093B3315DD3A /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43D6C78E861B3DF7CC707BF /* LanguageManager.swift */; };
+		F1B5F458F6C4CA38DA96893D /* DialogueScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D38E40A2F457ADA11BF92 /* DialogueScript.swift */; };
 		F272515CB5262E539472D75A /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C2AEB37ED283C5C772D032 /* DateFormatting.swift */; };
 		F8851714798B5551D563C1D2 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A852BE451A3002C74FD2386 /* ApiService.swift */; };
 		FA97C18475A2566C6CE35C1A /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD48952CA6CBCDE0B7729E /* ShopView.swift */; };
@@ -45,6 +48,7 @@
 		4CE413312A5FE375CA49623A /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
 		6DAF7DF8928BF159DF0CE0B4 /* FinLitIndia.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FinLitIndia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		700ACE704D35091325D333DD /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		7E8D38E40A2F457ADA11BF92 /* DialogueScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueScript.swift; sourceTree = "<group>"; };
 		94C158ECFD094DE29C20D0AC /* FinLitIndiaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FinLitIndiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98102D104EB645005AE516D8 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
 		C55A79D95CDCF57E02522B10 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		E43D6C78E861B3DF7CC707BF /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		EDAD48952CA6CBCDE0B7729E /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		F3BC06D609C398F03A0E8CA9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F8A0D807205C4D56604A9F34 /* LessonChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonChatView.swift; sourceTree = "<group>"; };
+		F9820DA79C41524609A4F01C /* ChatLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				03A5E0CE4980E877D4549A6E /* BudgetView.swift */,
+				F8A0D807205C4D56604A9F34 /* LessonChatView.swift */,
 				CB73695ADDF07C2955CFCC8A /* LessonDetailView.swift */,
 				F3BC06D609C398F03A0E8CA9 /* MainTabView.swift */,
 				43E673BC3D35831CFE748CD3 /* ProfileView.swift */,
@@ -134,6 +141,8 @@
 		A4197038728FDED920DA6D91 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F9820DA79C41524609A4F01C /* ChatLine.swift */,
+				7E8D38E40A2F457ADA11BF92 /* DialogueScript.swift */,
 				CA56622A3519EF91AC8BD301 /* Models.swift */,
 			);
 			path = Models;
@@ -283,9 +292,12 @@
 				F8851714798B5551D563C1D2 /* ApiService.swift in Sources */,
 				1E6D1DDFE032804E261295B8 /* AppSession.swift in Sources */,
 				306C9576D690D1DFDA9665CC /* BudgetView.swift in Sources */,
+				402F7739637750ED3D3C39FB /* ChatLine.swift in Sources */,
 				F272515CB5262E539472D75A /* DateFormatting.swift in Sources */,
+				F1B5F458F6C4CA38DA96893D /* DialogueScript.swift in Sources */,
 				9238C59D2795203E5AF7B1F4 /* FinLitIndiaApp.swift in Sources */,
 				D8D3F6C9308A093B3315DD3A /* LanguageManager.swift in Sources */,
+				6CBB0656102FDD3977BB3732 /* LessonChatView.swift in Sources */,
 				204223847FC7484660F0A48E /* LessonDetailView.swift in Sources */,
 				762EE866751D68B4916BEB37 /* MainTabView.swift in Sources */,
 				A550A996447EFD586BF33E8B /* Models.swift in Sources */,

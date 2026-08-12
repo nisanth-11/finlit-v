@@ -8,6 +8,7 @@ struct RoadmapView: View {
     @State private var completedLessonIds: Set<UUID> = []
     @State private var perfectLessonIds: Set<UUID> = []
     @State private var isLoading = true
+    @State private var selectedLesson: Lesson?
 
     private var lessonsByModule: [(module: Int, section: String, lessons: [Lesson])] {
         var groups: [Int: (section: String, lessons: [Lesson])] = [:]
@@ -54,6 +55,14 @@ struct RoadmapView: View {
         }
         .task { await loadData() }
         .refreshable { await loadData() }
+        .navigationDestination(item: $selectedLesson) { lesson in
+            LessonDetailView(
+                lesson: lesson,
+                isReplay: perfectLessonIds.contains(lesson.id),
+                onCompleted: { await loadData() },
+                onReturnToRoadmap: { selectedLesson = nil }
+            )
+        }
     }
 
     private func statChip(icon: String, color: Color, value: Int) -> some View {
@@ -83,8 +92,8 @@ struct RoadmapView: View {
                 Image(systemName: "lock.fill").foregroundStyle(.secondary)
             }
         } else {
-            NavigationLink {
-                LessonDetailView(lesson: lesson, isReplay: perfect, onCompleted: { await loadData() })
+            Button {
+                selectedLesson = lesson
             } label: {
                 HStack {
                     statusCircle(completed: completed, perfect: perfect, locked: false, index: index)
@@ -100,8 +109,14 @@ struct RoadmapView: View {
                     } else if completed {
                         Image(systemName: "checkmark.circle.fill").foregroundStyle(brandGreen)
                     }
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.tertiary)
                 }
+                .foregroundStyle(.primary)
+                .contentShape(Rectangle())
             }
+            .buttonStyle(.plain)
         }
     }
 

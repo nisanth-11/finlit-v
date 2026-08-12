@@ -6,7 +6,6 @@ struct QuizView: View {
     let isReplay: Bool
     let onFinished: () async -> Void
 
-    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var session: AppSession
     @ObservedObject private var lang = LanguageManager.shared
 
@@ -92,7 +91,7 @@ struct QuizView: View {
                 coinsEarned: coinsEarned,
                 onBackToRoadmap: {
                     showingResults = false
-                    dismiss()
+                    Task { await onFinished() }
                 },
                 onRetry: {
                     showingResults = false
@@ -101,7 +100,7 @@ struct QuizView: View {
                     isSubmitted = false
                     isSubmitting = false
                 },
-                onUseShield: resultCorrectCount == 3 ? { await useShieldAndFinish() } : nil
+                onUseShield: resultCorrectCount == questions.count - 2 ? { await useShieldAndFinish() } : nil
             )
             .interactiveDismissDisabled()
         }
@@ -170,7 +169,12 @@ struct QuizView: View {
         let correct = correctCount
         resultCorrectCount = correct
 
-        if correct < 4 {
+        // Matches the submit-quiz edge function: a reward only exists for a
+        // perfect score or one wrong, so anything below that never needs the
+        // round trip. Relative to questions.count, not a fixed lesson size --
+        // some lessons only have 2 questions, not 5.
+        let passThreshold = max(0, questions.count - 1)
+        if correct < passThreshold {
             coinsEarned = 0
             isSubmitting = false
             showingResults = true
@@ -196,7 +200,7 @@ struct QuizView: View {
             try await ApiService.shared.saveProgress(lessonId: lesson.id, isCompleted: true)
             await session.refreshProfile()
             showingResults = false
-            dismiss()
+            await onFinished()
         } catch {
             print("Quiz shield unavailable: \(error)")
         }

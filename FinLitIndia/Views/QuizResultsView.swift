@@ -11,11 +11,11 @@ struct QuizResultsView: View {
     @ObservedObject private var lang = LanguageManager.shared
     @State private var usingShield = false
 
-    private var isPass: Bool { correct >= 4 }
+    private var isPass: Bool { correct >= total - 1 }
     private var title: String {
         if correct == total { return "Perfect!" }
         if correct == total - 1 { return "Great job! 😊" }
-        if correct == 3 { return "Good try, but try again 🙁" }
+        if correct == total - 2 { return "Good try, but try again 🙁" }
         return "Try again 😔"
     }
 
